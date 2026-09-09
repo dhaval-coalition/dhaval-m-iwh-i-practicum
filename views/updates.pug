@@ -1,0 +1,26 @@
+doctype html
+html
+    head
+        title= title
+        meta(name="viewport" content="width=device-width, initial-scale=1")
+        link(rel="stylesheet", href="/css/style.css")
+    body
+        main.app-shell
+            header.page-header.page-header--compact
+                div
+                    p.eyebrow HubSpot Custom Object
+                    h1 Add a Video Game
+                    p.page-description Create a record with the same three properties displayed in the library.
+                a.secondary-action(href="/") Return to the homepage
+            section.form-panel
+                form(action="/update-cobj" method="POST")
+                    .field
+                        label(for="name") Name
+                        input#name(type="text" name="name" autocomplete="off" required)
+                    .field
+                        label(for="publisher") Publisher
+                        input#publisher(type="text" name="publisher" autocomplete="off" required)
+                    .field
+                        label(for="price") Price
+                        input#price(type="text" name="price" inputmode="decimal" autocomplete="off" required)
+                    button.primary-action(type="submit") Create Video Game
