@@ -1,0 +1,27 @@
+doctype html
+html
+    head
+        title= title
+        meta(name="viewport" content="width=device-width, initial-scale=1")
+        link(rel="stylesheet", href="/css/style.css")
+    body
+        main.app-shell
+            header.page-header
+                div
+                    p.eyebrow Add a Video Game
+                    h1 Custom Object Table
+                    p.page-description Manage the Video Game records stored in your HubSpot test account.
+                a.primary-action(href="/update-cobj") Add to this table
+            section.table-panel(aria-label="Video Game records")
+                table
+                    thead
+                        tr
+                            th(scope="col") Name
+                            th(scope="col") Publisher
+                            th(scope="col") Price
+                    tbody
+                        each videoGame in data
+                            tr
+                                td= videoGame.properties.name
+                                td= videoGame.properties.publisher
+                                td= videoGame.properties.price
